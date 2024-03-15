@@ -49,7 +49,7 @@ webserver.get('/clientes/:id/extrato', async (request, response) => {
   const id = Number(request.path_parameters.id);
 
   if (!isExtractParamsValid(id)) {
-    response.status(400);
+    response.status(400).send();
     return;
   }
 
@@ -64,9 +64,16 @@ webserver.get('/clientes/:id/extrato', async (request, response) => {
   response.send(stringifyExtract(result));
 });
 
+webserver.get('/healthcheck', async (request, response) => {
+  response.status(200).send();
+});
+
 webserver
   .listen(process.env.PORT || 3000)
-  .then((socket) => console.log(`Webserver started on port ${webserver.port}`))
+  .then((socket) => {
+    console.log(`Webserver started on port ${webserver.port}`);
+    console.log('DB app name:', sql.options.connection.application_name);
+  })
   .catch((error) => {
     console.error(`Failed to start webserver on port ${webserver.port}`);
     console.error(error);
