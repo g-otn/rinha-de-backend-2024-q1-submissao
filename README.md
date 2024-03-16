@@ -17,24 +17,28 @@ See also:
 
 ## Running
 
+You'll need to download the submission files (`docker-compose.yml`, `init.sql`, etc). 
+You can find it in the main repo: [zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/g-otn](https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/g-otn)
+
+[Subfolder download link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fzanfranceschi%2Frinha-de-backend-2024-q1%2Ftree%2Fmain%2Fparticipantes%2Fg-otn) (the main repo is heavy, this may be more convinient than cloning)
+
 ### Running the full submission
 Requirements: Docker, Docker Compose
 
-1. Download my submission folder from the main repo: [zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/g-otn](https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/g-otn)
-   - [Subfolder download link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fzanfranceschi%2Frinha-de-backend-2024-q1%2Ftree%2Fmain%2Fparticipantes%2Fg-otn)
-2. Navigate to that folder and use `docker compose up`, this will run the services locally as it was submitted.
+1. Navigate to that folder and use `docker compose up`, this will run the services locally as it was submitted.
 
 ### Running just this API
-Requirements: Node.js
+Requirements: Docker, Docker Compose, Node.js
 
-1. Clone this repository and navigate:
+1. Navigate to [my submission files](https://github.com/zanfranceschi/rinha-de-backend-2024-q1/tree/main/participantes/g-otn) you download, comment out the APIs and NGINX services.
+This will run PostgreSQL and run the DB initialization script.
+2. Clone this repository and navigate:
 ```bash
 git clone https://github.com/g-otn/rinha-de-backend-2024-q1-submissao.git
 cd rinha-de-backend-2024-q1-submissao
 ```
-2. Install dependencies: `npm i`
-3. Run the project: `npm start`
-4. You'll need at least a PostgreSQL instance runnning. You can use the submissions' `docker-compose.yml` and comment out the APIs and NGINX services.
+3. Install dependencies: `npm i`
+4. Run the project: `npm start`
 
 ## Note
 I started making this around 6 hours before the submission window closed. I submitted it around 25 minutes before it closed.
